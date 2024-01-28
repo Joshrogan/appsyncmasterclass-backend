@@ -27,7 +27,7 @@ custom:
 
 functions:
   confirmUserSignup:
-    runtime: nodejs18.x
+    runtime: nodejs16.x
     handler: functions/confirm-user-signup.handler
     environment:
       USERS_TABLE: !Ref UsersTable
@@ -100,3 +100,6 @@ resources:
       Value: ${self:custom.region}
     CognitoUserPoolId:
       Value: !Ref CognitoUserPool
+
+    WebCognitoUserPoolClientId:
+      Value: !Ref WebUserPoolClient
